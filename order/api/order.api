@@ -1,0 +1,18 @@
+syntax = "v1"
+
+type (
+	OrderReq {
+		Id int64 `json:"id"`
+	}
+	OrderResp {
+		Id        int64  `json:"id"`
+		GoodsName string `json:"goodsName"`
+		GoodsId   int64  `json:"goodsId"`
+	}
+)
+
+service Order {
+	@handler GetOrder
+	get /order/getorder (OrderReq) returns (OrderResp)
+}
+

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package goods;
+option go_package="./goods";
+
+message Request {
+  int64 Id = 1;
+}
+
+message Response {
+  int64 Id = 1;
+  string Name = 2;
+  string Desc = 3;
+}
+
+service Goods {
+  rpc info(Request) returns(Response);
+}

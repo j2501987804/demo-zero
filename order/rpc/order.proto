@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package order;
+option go_package="./order";
+
+message Request {
+  int64 Id = 1;
+}
+
+message Response {
+  int64 Id = 1;
+  int64 GoodsId = 2;
+  string GoodsName = 3;
+}
+
+service Order {
+  rpc GetOrder(Request) returns(Response);
+}
